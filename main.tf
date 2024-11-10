@@ -1,31 +1,13 @@
-# Create tracking tags from EITS vars module
-module "eits_vars" {
- source = ""
-
- module_repo = "eits-tf-aws-iam"
- tags = var.tags
-}
 
 locals {
  # Merge tracking tags and var tags
  tags = merge(var.tags, module.eits_vars.tags)
 
- # List of Experian PrincipalOrgIDs
+ # List of Account PrincipalOrgIDs
  principal_org_ids = [
- "o-33fd8d019b",
- "o-m6fjxrdr7x",
- "o-c7zjgfu8y0",
- "o-yfj05rswby",
- "o-m5tvfoa2j3",
- "o-v4zenr53b5",
- "o-r4orxccey7",
- "o-72fonqzrib",
- "o-rhlgy4h75h",
- "o-sg7wkai3ne",
- "o-mw9tjv7zmd",
- "o-8jhc22ry8c",
- "o-khqbuhx1kx",
- "o-mtyumpp7ml"
+ "o-33fd8d015b",
+ "o-m6fjxrdr4x",
+ "o-c7zjgfu820",
  ]
 }
 
